@@ -6,7 +6,7 @@
 
 
 Base64 = {
-    _Rixits: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
+    _Rixits: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",
     fromNumber: function (number) {
         if (isNaN(Number(number)) || number === null ||
             number === Number.POSITIVE_INFINITY)
@@ -36,10 +36,8 @@ Base64 = {
         return result;
     }
 }
-
 arr = []
-for (let i = 0; i < 4096;i++){b=Base64.fromNumber(i);
-arr.push(('AA').substring(0, 2 - b.length) + b)}
+for (let i = 0; i < 4096;i++){b=Base64.fromNumber(i);arr.push(('AA').substring(0, 2 - b.length) + b)}
 
 console.log(JSON.stringify(arr));
 
