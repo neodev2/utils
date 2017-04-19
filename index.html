@@ -8,14 +8,32 @@
 		<script src="charset1.js"></script>
 		<script src="charset2.js"></script>
 		<script>
-			console.log(file.length);
+			console.log('initial base64 file:', file, file.length);
+			
+			document.body.innerHTML += '<b>initial base64 file:</b><img src="'+file+'">';
+			
+			// compress
 			
 			for(var i=0; i<charset1.length; i++){
 				regex = new RegExp(charset1[i], 'gm');
 				file = file.replace(regex, charset2[i]);
 			}
 			
-			console.log(file.length);
+			console.log('compressed file:', file, file.length);
+			
+			document.body.innerHTML += '<b>compressed file:</b><img src="'+file+'">';
+			
+			
+			//decompress
+			
+			for(var i=0; i<charset2.length; i++){
+				regex = new RegExp(charset2[i], 'gm');
+				file = file.replace(regex, charset1[i]);
+			}
+			
+			console.log('decompressed file:', file, file.length);
+			
+			document.body.innerHTML += '<b>decompressed file:</b><img src="'+file+'">';
 		</script>
 	</body>
 </html>
