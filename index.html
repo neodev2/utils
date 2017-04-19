@@ -1,0 +1,17 @@
+<html>
+    <head></head>
+
+    <body>
+        <script src="dictionary1.js"></script>
+        <script>
+        var dict = dictionary1;
+        var string = 'acbaac';
+
+        for(var i in dict){
+        string = string.replace(RegExp(i, 'g'), dict[i]);
+        }
+
+        console.log(string);
+        </script>
+    </body>
+</html>
