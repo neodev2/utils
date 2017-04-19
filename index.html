@@ -2,15 +2,23 @@
 <html>
     <head></head>
     <body>
+        <div id="button">Go</div>
+        <input id="input" type="text" value="acbaac">
+        
         <script src="dictionary1.js"></script>
         <script>
-        var string = 'acbaac';
-
-        for(var i in dictionary1){
-            string = string.replace(RegExp(i, 'g'), dictionary1[i]);
+        function compressBase64(string){
+            for(var i in dictionary1){
+                string = string.replace(RegExp(i, 'g'), dictionary1[i]);
+            }
+            return string;
         }
-
-        console.log(string);
+        
+        console.log(compressBase64(input.value));
+        
+        button.onclick = function(){
+            console.log(compressBase64(input.value));
+        }
         </script>
     </body>
 </html>
