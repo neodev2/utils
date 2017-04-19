@@ -1,24 +1,21 @@
 <!doctype html>
 <html>
-    <head></head>
-    <body>
-        <div id="button">Go</div>
-        <input id="input" type="text" value="acbaac">
-        
-        <script src="dictionary1.js"></script>
-        <script>
-        function compressBase64(string){
-            for(var i in dictionary1){
-                string = string.replace(RegExp(i, 'g'), dictionary1[i]);
-            }
-            return string;
-        }
-        
-        console.log(compressBase64(input.value));
-        
-        button.onclick = function(){
-            console.log(compressBase64(input.value));
-        }
-        </script>
-    </body>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<script src="file.js"></script>
+		<script src="charset1.js"></script>
+		<script src="charset2.js"></script>
+		<script>
+			console.log(file.length);
+			
+			for(var i=0; i<charset1.length; i++){
+				regex = new RegExp(charset1[i], 'gm');
+				file = file.replace(regex, charset2[i]);
+			}
+			
+			console.log(file.length);
+		</script>
+	</body>
 </html>
