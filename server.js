@@ -36,8 +36,18 @@ Base64 = {
         return result;
     }
 }
+
+
 arr = []
-for (let i = 0; i < 4096;i++){b=Base64.fromNumber(i);arr.push(('AA').substring(0, 2 - b.length) + b)}
+
+/*for (let i = 0; i < 4096;i++){
+	b=Base64.fromNumber(i);
+	arr.push(('AA').substring(0, 2 - b.length) + b)
+}*/
+
+for (let i = 4096; i < 8192;i++){
+	arr.push(String.fromCharCode(i));
+}
 
 console.log(JSON.stringify(arr));
 
